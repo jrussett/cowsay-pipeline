@@ -1,5 +1,13 @@
+resources:
+  - name: cowsay-src
+    type: git
+    source:
+      uri: https://github.com/jrussett/cowsay-pipeline.git
+      branch: master
+
 jobs:
   - name: cowsay
     plan:
-      - task: cowsay
-        file: ci/cowsay.yml
+      - get: cowsay-src
+      - task: cowsay-run
+        file: cowsay-src/ci/cowsay-task.yml
