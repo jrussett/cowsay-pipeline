@@ -7,6 +7,8 @@ image_resource:
     repository: ruby
     tag: 'latest'
 
+inputs:
+  - name: cowsay-src
 
 run:
-  path: test.sh
+  path: cowsay-src/ci/test.sh
