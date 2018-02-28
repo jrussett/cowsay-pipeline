@@ -1,2 +1,6 @@
 #! /bin/sh
-echo "Hey, I executed!"
+
+gem install cowsay
+
+cowsay "Hopefully this worked"
+
