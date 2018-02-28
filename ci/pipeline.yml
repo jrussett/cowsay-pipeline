@@ -9,5 +9,6 @@ jobs:
   - name: cowsay
     plan:
       - get: cowsay-src
+        trigger: true
       - task: cowsay-run
         file: cowsay-src/ci/cowsay-task.yml
