@@ -10,5 +10,8 @@ image_resource:
 inputs:
   - name: cowsay-src
 
+outputs:
+  - name: cowsay-output
+
 run:
   path: cowsay-src/ci/test.sh

@@ -2,4 +2,5 @@
 
 fly -t concourse set-pipeline \
   -p cowsay \
-  -c ci/pipeline.yml
+  -c ci/pipeline.yml \
+  -l ci/slack_url.yml

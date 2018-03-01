@@ -5,6 +5,11 @@ resources:
       uri: https://github.com/jrussett/cowsay-pipeline.git
       branch: master
 
+  - name: slack-alert
+    type: slack-notification
+    source:
+      url: ((slack_url))
+
 jobs:
   - name: cowsay
     plan:
@@ -12,3 +17,6 @@ jobs:
         trigger: true
       - task: cowsay-run
         file: cowsay-src/ci/cowsay-task.yml
+      - put: slack-alert
+        params:
+          text_file: cowsay-output/output.txt
